@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct Category: Identifiable {
-    let id = UUID()
-    let image: String
-    let name: String
+    var id = UUID()
+    var image: String
+    var name: String
 }
 
 let categories: [Category] = [

@@ -13,6 +13,14 @@ struct Exclusive: View {
         GridItem(.flexible()),
     ]
     
+    let shoeNames: [String] = [
+        "Off-White Air Forces",
+        "Random",
+        "Girly Air Forces",
+        "Chill Nikes",
+        "Nike Sports"
+    ]
+    
     var body: some View {
         VStack(spacing: -10) {
             HStack {
@@ -27,7 +35,7 @@ struct Exclusive: View {
                 LazyVGrid(columns: columns) {
                     ForEach(1..<6) { index in
                         GeometryReader { geo in
-                            NavigationLink(destination: DetailsPage(image: "shoes\(index)", index: index)) {
+                            NavigationLink(destination: DetailsPage(image: "shoes\(index)", name: "\(shoeNames[index-1])")) {
                                 Image("shoes\(index)")
                                     .resizable()
                                     .scaledToFill()
